@@ -1,0 +1,73 @@
+
+
+
+// fontawsome
+$fa-font-path: "../fonts";
+
+// 主顏色
+$primary-color: #2284E6 !default;
+
+
+// 文字顏色
+$text-primary:   #323233;
+$text-secondary: #7D7D80;
+$text-tertiary:  #C8C8CC;
+
+
+// 邊框色
+$border-color: #EBEBF0;
+
+
+// 其他顏色
+$danger-color: #FF4040;
+$safe-color:   #3DCC55;
+
+
+$font-size: 14px !default;
+$line-height: 22px !default;
+
+
+
+
+
+
+// @keyframes fadeOut {
+//     0% {
+//         z-index: 999;
+//         opacity: 1;
+//     }
+
+//     99.99% {
+//         z-index: 999;
+//     }
+
+//     100% {
+//         z-index: 0;
+//         opacity: 0;
+//     }
+// }
+// @keyframes draw {
+//     0% {
+//         stroke-dasharray: 0 400;
+//         stroke-dashoffset: 200;
+//         fill-opacity: 0;
+//         stroke-width: 1;
+//     }
+
+//     37% {
+//         stroke-dasharray: 200 0;
+//         stroke-dashoffset: 200;
+//         fill-opacity: 0;
+//         stroke-width: 1;
+//     }
+
+//     50% {
+//         fill-opacity: 1;
+//         stroke-width: 0;
+//     }
+
+//     100% {
+//         fill-opacity: 1;
+//         stroke-width: 0;
+//     }
+// }

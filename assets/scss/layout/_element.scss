@@ -1,0 +1,96 @@
+// element plus
+.el-radio-group{
+    // padding-left: 20px;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    flex-shrink:0;
+    width: 100%;
+    .el-radio{
+        width: 100%;
+        height: 44px;
+        padding-left: 20px;
+        input[type="text"]{
+            position: absolute;
+            left: 0;
+            top: 0;
+            float: left;
+            width: 100%;
+            border-radius: 0;
+            height: 44px;
+            outline: none;
+            border: 1px solid transparent;
+            background: transparent; //#eee
+            padding: 12px 12px 12px 56px;
+            &:focus{
+                box-shadow: inset 0 -1px 0 0 $primary-color;
+            }
+        }
+        .btn-delete{
+            position: absolute;
+            right: 0;
+            top: 8px;
+            transition: 0.3s;
+            display: none;
+            border: 1px solid $border-color;
+            border-radius: 28px;
+            text-align: center;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            color: $text-primary;
+            svg{
+                position: absolute;
+                top: 7px;
+                left: 8px;
+            }
+            &:hover{
+                color: $danger-color;
+                border: 1px solid $danger-color;
+                background: rgba($danger-color, .05);
+                svg{
+                    fill: $danger-color;
+                }
+            }
+        }
+        &.is-checked{
+            background-color:rgba(34, 132, 230, 0.1);
+            border-radius: 5px;
+            &.is-disabled{
+                background-color:unset;
+            }
+        }
+    }
+    .el-radio__inner{
+        width:24px;
+        height: 24px;
+        &::after{
+            width:16px;
+            height: 16px;
+        }
+        .create &{
+            &::after{
+                display: none;
+            }
+        }
+        // --el-color-white
+        .preview &{
+            &::after{
+                background-color: var(--el-color-primary);
+            }
+        }
+    }
+    .el-radio__input.is-checked .el-radio__inner {
+        border-color: $border-color;
+        background: var(--el-color-white);
+    }
+    .el-radio__input{
+        z-index: 999;
+    }
+    .el-radio__label{
+        padding-left: 14px;
+        color:black !important;
+    }
+    .el-radio:last-child {
+        margin-right: auto;
+    }
+}

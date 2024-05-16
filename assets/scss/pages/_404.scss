@@ -1,0 +1,58 @@
+//flex
+.flex {
+    display: flex;
+}
+
+// color
+.text-red-500{
+    color:rgb(239,68,68);
+}
+.text-gray-800 {
+    color:rgb(31,41,55);
+}
+
+// background-color
+.bg-white{
+    background-color:rgb(255, 255, 255);
+}
+
+// weight
+.font-semibold {
+    font-weight: 600;
+}
+
+// size
+.text-8xl {
+    font-size: 6rem;
+    line-height: 1;
+}
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+// margin
+.my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+// padding
+.py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+// align
+.items-center {
+    align-items: center;
+}
+
+// flex
+.flex-col {
+    flex-direction: column;
+}

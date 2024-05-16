@@ -1,0 +1,40 @@
+.owner{
+    .owner_title{
+        font-size:18px;
+    }
+    .owner_name{
+        border-radius: 0;
+        outline: none;
+        border: 1px solid transparent;
+        font-size: 24px;
+        width: 100%;
+        padding: 5px 0;
+        margin-bottom: 4px;
+    }
+    .question-wrap{
+        padding: 30px 30px 30px 92px;
+    }
+    .el-radio-group .el-radio__input.is-checked .el-radio__inner{
+        position: relative;
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 11px;
+            top: 11px;
+            border-color: var(--el-color-primary);
+            background: var(--el-color-primary);
+        }
+    }
+    .noAnswer{
+        border: 1px solid #FF4040;
+        background: rgba(255, 64, 64, 0.05);
+        .num{
+            border: 1px solid #FF4040;
+            color: #FF4040;
+            background: rgba(255, 64, 64, 0.05);
+        }
+    }
+}

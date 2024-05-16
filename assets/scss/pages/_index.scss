@@ -1,0 +1,356 @@
+
+/* ==========================================================================
+    index.html
+========================================================================== */
+.container.index{
+    // 架構調整
+    min-width: 1040px; //1040長出卷軸
+    header{}
+    main{
+        @include scrollbar;
+        max-width: 100%;
+        padding: 20px 20px 0;
+        min-height: 0;
+    }
+    .content{
+        display: block; //取代flex
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1000px;
+        height: 100%;
+    }
+}
+
+
+
+.container.index{
+    // header
+    .header-top{
+        padding-top: 36px;
+        margin-bottom: 10px;
+    }
+    .header-content{
+        min-height: 160px;
+    }
+    .header-title{
+        padding-top: 14px;
+    }
+    // 首頁的title
+    main .title{
+        margin: 0;
+        padding-top: 0;
+        border-bottom: 0;
+        span{
+            padding: 0 2px;
+        }
+        .all{
+            color: $primary-color;
+            font-weight: 500;
+        }
+        .noreply{
+            padding-left: 12px;
+            color: $danger-color;
+        }
+        .reply{
+            padding-left: 12px;
+        }
+    }
+}
+
+
+// 列表
+.que-wrap{
+    margin: 8px 0 0;
+    border: 1px solid $border-color;
+    border-left: 0;
+    border-right: 0;
+}
+
+// th寬度設定
+.que-tr{
+    @include clearfix;
+
+    // 全部的td
+    .que-td{
+        align-items: center;
+        float: left;
+        font-size: $font-size;
+        display: flex;
+        justify-content: center;
+        min-height: 50px;
+        word-break: break-all;
+    }
+    .que-td:nth-child(1){
+        width: 30%;
+    }
+    .que-td:nth-child(2){
+        width: 10%;
+    }
+    .que-td:nth-child(3){
+        width: 12%;
+    }
+    .que-td:nth-child(4){
+        width: 12%;
+    }
+    .que-td:nth-child(5){
+        width: 13%;
+    }
+    .que-td:nth-child(6){
+        width: 10%;
+    }
+    .que-td:nth-child(7){
+        width: 13%;
+    }
+}
+
+// thead
+.que-head{
+    // head的td
+    .que-td{
+        cursor: pointer;
+        font-weight: 500; //700
+        min-height: 60px;
+        // 垂直置中
+        align-items: center;
+        background: rgba($border-color,.3);
+        border: 1px solid $border-color;
+        border-top: 2px solid $border-color;
+        &.nonePointer{
+            cursor:unset;
+        }
+    }
+    span{
+        position: relative;
+        transform: translateX(-4px);
+        &:after{
+            position: absolute;
+            top: 50%;
+            right: -12px;
+            transform: translateY(-50%);
+            content: "";
+            width: 8px;
+            height: 16px;
+            display: block;
+            background: url("../image/arrow-1.png") no-repeat center center;
+        }
+    }
+    .que-td.drop{
+        background: rgba($primary-color,.05);
+        border-top: 2px solid $primary-color;
+        span:after{
+            background: url("../image/arrow-2.png") no-repeat center center;
+        }
+    }
+    .que-td.rise{
+        background: rgba($primary-color,.05);
+        border-top: 2px solid $primary-color;
+        span:after{
+            background: url("../image/arrow-3.png") no-repeat center center;
+        }
+    }
+}
+
+// tbody
+.que-body{
+    // body的td
+    .que-td{
+        color: $text-secondary;
+        background: #fff;
+        padding: 15px 10px;
+        border-bottom: 1px solid $border-color;
+    }
+    .que-tr{
+        display: flex;
+        align-items: stretch;
+        // hover setting
+        &:hover .que-td{
+            background: rgba($primary-color,.02);
+        }
+    }
+    // 第一格 站名
+    .que-td:first-child{
+        border-left: 1px solid $border-color;
+
+        justify-content: flex-start;
+        font-weight: 500; //700
+        padding: 15px 20px;
+        a{
+            color: $text-primary;
+            &:hover{
+                text-decoration: underline;
+                color: $primary-color;
+            }
+        }
+    }
+    .que-td:nth-child(6){
+        padding-top: 11px ;
+        padding-bottom: 11px ;
+    }
+    // 最後一格
+    .que-td:last-child{
+        position: relative;
+        border-right: 1px solid $border-color;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        .btn{
+            min-width: 40px;
+            height: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        // 操作選單
+        .operate-content{
+            background: #fff;
+            width: 172px;
+            border-radius: 5px;
+            position: absolute;
+            right: 36px;
+            top: -1px;
+            z-index: 19;
+            border: 1px solid $primary-color;
+            ul,li,a{
+                float: left;
+                width: 100%;
+                display: block;
+            }
+            ul{
+                padding: 0 8px 8px;
+            }
+            li>a{
+                border-radius: 5px;
+                padding: 10px 8px;
+                color: $text-primary;
+                &:hover{
+                    color: $primary-color;
+                    background: rgba($primary-color,.05);
+                    svg{
+                        fill: $primary-color;
+                    }
+                }
+            }
+            a>svg{
+                width: 20px;
+                vertical-align: middle;
+                text-align: center;
+                margin: 0 4px 0 0;
+            }
+            .operate-del a:hover{
+                color: $danger-color;
+                background: rgba($danger-color,.05);
+                svg{
+                    fill: $danger-color;
+                }
+            }
+            .operate-des{
+                padding: 18px 18px 10px 12px;
+                span{
+                    // display: block;
+                    font-size: 14px;
+                    color: $text-primary;
+                }
+                svg{
+                    width: 19px;
+                    text-align: center;
+                    float: right;
+                }
+            }
+            .copy-wrap{
+                .copy-content{
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                }
+            }
+        }
+        .operate-select-wrap{
+            svg{
+                // fill
+            }
+        }
+        .operate-select-wrap.is-active .operate-content{
+            display: block;
+            min-height: 100px;
+        }
+    }
+}
+
+// 狀態
+.tip{
+    // 預設
+    display: inline-block;
+    border-radius: 50px;
+    text-align: center;
+    width: 100%;
+    height: 28px;
+    padding: 2px 12px;
+    font-size: 12px;
+    background: #fff;
+}
+.tip-state{
+    // 已回覆
+    border: 1px solid $border-color;
+    color: $text-secondary;
+}
+.tip-noreply{
+    // 未回覆
+    border: 1px solid $danger-color;
+    color: $danger-color;
+}
+.tip-archive{
+    // 關閉
+    background: $border-color;
+    border: 1px solid $border-color;
+    color: $text-secondary;
+}
+
+// paginate 分頁
+.paginate-wrap{
+    // width: 100%;
+    input[type="text"]{
+        width: 68px;
+    }
+}
+.paginate-top{
+    .que-add{
+        z-index: 9;
+        position: relative;
+        float: right;
+        margin-right: 0;
+        svg{
+            margin-right: 8px;
+            width: 14px;
+            height: 20px;
+            vertical-align: top;
+            fill:#fff;
+        }
+        &:hover{
+            svg{
+                fill:#2284E6;
+            }
+        }
+    }
+    a{
+        margin-right: 2px;
+    }
+
+}
+.index {
+    .paginate-bottom{
+        padding-top: 8px;
+        padding-bottom: 100px;
+        a{
+            display: block;
+            float: left;
+            min-width: 50px;
+        }
+        input[type="text"]{
+            margin-left: 8px;
+        }
+        span{
+            float: left;
+            display: block;
+            padding: 15px 20px 15px 12px;
+        }
+    }
+}

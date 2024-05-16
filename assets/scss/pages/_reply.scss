@@ -1,0 +1,149 @@
+
+.reply{
+    .header-top{
+        padding-top: 20px;
+        padding-bottom: 30px;
+        @include MQ(d1280){
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        // 右上角按鈕
+        .header-menu{
+            top: 10px; //20px
+            @include MQ(d1280){
+                right: 20px;
+            }
+        }
+        .header-menu .btn:hover{
+            color: $danger-color;
+            background: rgba($danger-color,.05);
+            border: 1px solid $danger-color;
+        }
+    }
+    .header-bottom{
+        .side-nav{
+            top: 82px; //20px
+            @include MQ(d1280){
+                right: 88px;
+            }
+        }
+    }
+
+    .page-content-wrap{
+        .item:before{
+            cursor: inherit;
+            background: none;
+        }
+        .image{
+            // width: 700px;
+            // height: 100px;
+            margin: 0 0 20px;
+            cursor: inherit;
+        }
+        .noAnswer{
+            border: 1px solid #FF4040;
+            background: rgba(255, 64, 64, 0.05);
+            .num{
+                border: 1px solid #FF4040;
+                color: #FF4040;
+                background: rgba(255, 64, 64, 0.05);
+            }
+        }
+    }
+    // 右邊
+    .page-add-wrap .page-add{
+        a:last-child{
+            margin-top: 0px;
+        }
+    }
+
+
+    .header-content .title{
+        padding-left: 70px;
+        @include MQ(d1280){
+            padding-left: 90px;
+        }
+    }
+    .header-edit .header-detail .code{
+        padding-left: 70px;
+        @include MQ(d1280){
+            padding-left: 90px;
+        }
+    }
+    .header-edit .header-detail .man{
+        @include MQ(d1280){
+            padding-right: 20px;
+        }
+    }
+    // header調整
+    .tip-wrap{
+        float: left;
+        width: 100%;
+        padding-left: 70px;
+        @include MQ(d1280){
+            padding-left: 90px;
+        }
+        .tip{
+            float: left;
+            width: auto;
+            height: 20px;
+            line-height: 20px;
+            // min-width: 74px;
+            margin-right: 10px;
+            padding: 0;
+            color: $text-secondary;
+
+        }
+    }
+
+    .reply-title{
+        color: $text-primary;
+        font-size: 18px; //16
+        line-height: 24px;
+        padding: 30px 30px 30px 92px;
+    }
+    .reply-content{
+        padding: 0 30px 30px;
+    }
+
+
+
+
+    // 業主回覆頁
+    // 預設回覆
+    .reply-wrap{
+        .response{
+            margin-top: 12px;
+        }
+        // 簡答
+        .short-response{
+            border-radius: 5px;
+            padding: 12px 20px;
+            color: $primary-color;
+            background: rgba($primary-color,.1);
+        }
+        // 選擇題
+        .choose-response{
+            ul,li{display: block;}
+            li{
+                padding: 12px 50px 12px 20px;
+            }
+            .check{
+                position: relative;
+                border-radius: 5px;
+                color: $primary-color;
+                background: rgba($primary-color,.1);
+            }
+            .check:after{
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                font: var(--fa-font-solid);
+                content: "\f00c";
+            }
+        }
+    }
+
+}

@@ -1,0 +1,249 @@
+
+.preview{
+    // mobile nav
+    .header-content .side-nav{
+        top: 12px;
+        @include MQ(t768){
+            top: 18px; //20px
+        }
+    }
+    // header
+    .header-content{
+        min-height: 60px; //104px
+        @include MQ(d1920){
+            margin: 0 auto;
+            padding-left: 0px;
+            padding-right: 0px;
+            max-width: 1000px;
+        }
+        @include MQ(t768){
+            min-height: 60px; //70px
+        }
+    }
+    // 標題
+    .header-content .title{
+        float: none;
+        line-height: 36px;
+        padding-top: 20px; //20px
+        padding-bottom: 10px; //20px
+        padding-left: 66px;
+        min-height: 75px;
+
+        @include MQ(d1280){
+            padding-left: 86px;
+            padding-right: 20px;
+        }
+        @include MQ(t768){
+            padding-top: 16px; //20px 28px
+            font-size: 18px;
+            line-height: 26px;
+            padding-left: 76px;
+            min-height: 60px;
+        }
+    }
+    // 架構
+    .container{
+        min-width: initial; //此頁要RWD
+    }
+    // 左
+    aside{
+
+    }
+
+
+    // 右邊
+    .page-add-wrap{
+
+        @include MQ(d1280){
+            position: sticky;
+            height: auto;
+            top: auto;
+            right: auto;
+            bottom: 20px;
+            float: right;
+            margin: 0 80px 0 0 ;
+            padding-top: 20px;
+        }
+        .page-add{
+            @include MQ(d1280){
+                padding-top: 0px;
+            }
+        }
+    }
+
+    // 新增的可以刪掉
+    .page-content{
+        position: relative;
+    }
+    // 中
+    // ==================== //
+    .page-content-wrap{
+        .item:before{
+            cursor: inherit;
+            background: none;
+        }
+        .image{
+            margin: 0 0 20px;
+            cursor: inherit;
+        }
+        // 項目 標題
+        .preview-title{
+            color: $text-primary;
+            font-size: 18px; //16px
+            line-height: 24px;
+            padding: 30px 30px 30px 92px;
+        }
+        // 項目 內容
+        .preview-content{
+            padding: 0 30px 30px;
+            #previewDiv{
+                div{
+                    width: fit-content;
+                    position: relative;
+                    height: fit-content;
+                    margin: 0 auto;
+                    padding: 14px;
+                    img{
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        // 項目 回答選項
+        .preview-wrap{
+            .response{
+                margin-top: 12px;
+            }
+            // 簡答
+            .short-response textarea{
+                border: 1px solid $border-color;
+                border-radius: 5px;
+                padding: 8px 12px;
+                font-size: 14px;
+                min-height: 90px; //88px
+                &:focus{
+                    border: 1px solid $primary-color;
+                }
+            }
+            .error textarea{
+                border: 1px solid $danger-color;
+            }
+            // 選擇題
+            .choose-response{
+                ul,li{display: block;}
+                li{
+                    float: left;
+                    width: 100%;
+                    // @include clearfix;
+                    padding: 12px 50px 12px 20px;
+                }
+                input[type="radio"]{
+                    float: left;
+                    &+label{
+                        float: left;
+                        display: block;
+                        padding-right: 12px;
+                    }
+                }
+                .choose-option-else{
+                    padding: 10px 40px 6px 20px;
+                    input[type="radio"]{
+                        margin-top: 3px; //6px
+                        &+label{
+                            margin-top: 3px; //6px
+                        }
+                    }
+                    textarea{
+                        font-size: 14px;
+                        height: 30px;
+
+                        border-radius: 0;
+                        border: 1px solid transparent;
+                        border-bottom: 1px solid $border-color;
+                        background: transparent;
+                        padding: 0;
+                        width: calc(100% - 72px); //80px
+                        &:focus{
+                            border-bottom: 1px solid $primary-color;
+                        }
+                    }
+                }
+                .check{
+                    position: relative;
+                    height: 100%;
+                    border-radius: 5px;
+                    color: $primary-color;
+                    background: rgba($primary-color,.1);
+                    textarea{
+                        border-bottom: 1px solid $primary-color;
+                    }
+                }
+            }
+        }
+        // 送出按鈕
+        .submit-wrap{
+            @include clearfix;
+            width: 100%;
+            padding-top: 40px; //60px
+            .btn{
+                min-width: 200px;
+                @include MQ(d1280){
+                    min-width: 30%;
+                }
+                @include MQ(m480){
+                    min-width: 40%;
+                }
+            }
+            .btn-disable{
+                cursor: pointer;
+            }
+            a:nth-child(1){
+                float: left;
+            }
+            a:nth-child(2){
+                float: right;
+            }
+        }
+    }
+
+    // 進度條
+    // ==================== //
+    .progress-bar{
+        position: relative;
+        background: $border-color;
+        height: 4px;
+        width: 100%;
+        margin: 0 auto 40px;
+        max-width: 1000px;
+        border-radius: 4px;
+        &:before{
+            // 藍線
+            position: absolute;
+            bottom: 0px; //0px
+            content: '';
+            display: block;
+            border-radius: 4px;
+            width: 50%;
+            height: 4px;
+            background: $primary-color;
+        }
+        .progress-bar-num{
+            position: absolute;
+            left: calc(50% - 50px);
+            bottom: 2px; //5px
+            display: inline-block;
+            width: 50px;
+            text-align: right;
+            padding: 4px 0;
+            font-size: 13px;
+            color: $primary-color;
+        }
+    }
+}
+
+
+
+
+
+
+

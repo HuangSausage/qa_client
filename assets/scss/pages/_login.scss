@@ -1,0 +1,190 @@
+
+.login{
+    // 架構調整
+    .container{
+        min-width: 0;
+    }
+    main{
+        max-width: none;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        // scrollbar-gutter: stable;
+        @include MQ(t768){
+            overflow-y: hidden;
+        }
+    }
+    input{
+        background: transparent;
+    }
+}
+
+
+.login-wrap{
+    // display: flex;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 740px;
+    max-height: 600px;
+    height: 100%;
+    background: rgba(#fff, .8);
+    border: 2px solid #fff;
+    @include MQ(t768){
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        // scrollbar-gutter: stable;
+
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+.login-side{
+    float: left;
+    width: 260px; //260
+    height: 100%;
+    min-height: 0;
+    background: url('../image/logo.png') no-repeat center 120px #ebebf2; //#F8F9FD
+    @include MQ(t768){
+        width: 100%;
+        height: 120px;
+        background: url('../image/logo.png') no-repeat center center #ebebf2;
+    }
+}
+.login-content{
+    float: left;
+    width: 476px;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    // scrollbar-gutter: stable;
+    @include MQ(t768){
+        height: auto;
+        width: 100%;
+    }
+}
+
+
+
+.form-wrap{
+    width: 100%;
+    max-width: 280px;
+    margin: 120px auto 40px;
+    height: auto;
+    @include MQ(t768){
+        margin: 20px auto 0;
+        width: 90%;
+    }
+}
+.form-title{
+    font-size: 24px;
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    margin-bottom: 36px;
+}
+.form-content{
+    @include MQ(t768){
+        padding-bottom: 40px;
+    }
+    .form-line{
+        margin-bottom: 15px;
+        position: relative;
+    }
+    .name{
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .suffix{
+        display: inline-block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .error_suffix{
+        float: right;
+        color: red;
+    }
+    input[type="text"],
+    input[type="password"],
+    .btn{
+        float: none;
+        width: 100%;
+    }
+}
+
+.form-keep {
+    margin: 12px 0 40px;
+    .el-checkbox{
+        height: 20px;
+        margin: 1px 8px 0 0;
+        .el-checkbox__inner{
+            width: 20px;
+            height: 20px;
+            // background-color: $primary-color;
+            // border-color: $primary-color;
+            &::after{
+                height: 12px;
+                left: 7px;
+            }
+        }
+    }
+    input[type="checkbox"]{
+        display: none;
+        &+label span{
+            vertical-align: text-top;
+            border-radius: 3px;
+            display: inline-block;
+            border: 1px solid #d6d6d6;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        &:checked+label{
+            // 點選後的文字顏色
+            color: $primary-color;
+        }
+    }
+    label{
+        padding-left: 0 !important;
+        line-height: 20px;
+        color: #323233;
+        font-size: 15px;
+        vertical-align: top;
+    }
+}
+
+
+
+// 背景
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #c2c2cc 30%, #e9e9f0 30%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+}
+
+.bg3 {
+    animation-duration:5s;
+}
+
+@keyframes slide {
+    0% {
+        transform:translateX(-25%);
+    }
+    100% {
+        transform:translateX(25%);
+    }
+}
